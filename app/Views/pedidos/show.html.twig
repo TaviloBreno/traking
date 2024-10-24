@@ -1,0 +1,23 @@
+{% extends 'layouts/main.html.twig' %}
+
+{% block title %}Detalhes do Pedido{% endblock %}
+
+{% block content %}
+<div class="pedido-detalhes-container">
+    <h1 class="pedido-titulo">Detalhes do Pedido #{{ pedido.id }}</h1>
+
+    <ul class="pedido-detalhes">
+        <li><strong>Cliente:</strong> {{ pedido.cliente }}</li>
+        <li><strong>Status:</strong> {{ pedido.status }}</li>
+        <li><strong>Data de Envio:</strong> {{ pedido.data_envio }}</li>
+        <li><strong>Itens:</strong></li>
+        <ul class="pedido-itens">
+            {% for item in pedido.itens %}
+            <li>{{ item.nome }} - Quantidade: {{ item.quantidade }}</li>
+            {% endfor %}
+        </ul>
+    </ul>
+
+    <a href="/" class="btn-voltar">Voltar à lista de pedidos</a>
+</div>
+{% endblock %}

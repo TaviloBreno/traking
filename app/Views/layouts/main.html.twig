@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Sistema de Rastreio{% endblock %}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css"> {# Atualizado para o novo CSS #}
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        {% include 'partials/header.html.twig' %}
+    </header>
+
+    <main>
+        <section>
+            {% block content %}
+            <!-- Conteúdo específico da página -->
+            {% endblock %}
+        </section>
+    </main>
+
+    <footer>
+        {% include 'partials/footer.html.twig' %}
+    </footer>
+
+    <script src="/assets/js/app.js"></script> {# Script principal da aplicação #}
+    {% if block('title') is defined and block('title') == 'Criar Pedido' %}
+        <script src="/assets/js/criar_pedido.js"></script> {# Script específico para a página de criar pedido #}
+    {% endif %}
+</body>
+</html>

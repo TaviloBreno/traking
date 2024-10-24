@@ -1,0 +1,24 @@
+{# app/Views/criar_pedido.html.twig #}
+{% extends 'layouts/main.html.twig' %}
+
+{% block title %}Criar Pedido{% endblock %}
+
+{% block content %}
+<h1>Criar Pedido</h1>
+
+<form method="POST" action="/pedido/criar">
+    <label for="cliente">Cliente:</label>
+    <input type="text" id="cliente" name="cliente" required>
+
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="status" required>
+
+    <label for="data">Data:</label>
+    <input type="date" id="data" name="data" required>
+
+    <label>Descrição do item:</label>
+    <input type="textarea" id="descricao" name="descricao" required>
+
+    <button type="submit">Criar Pedido</button>
+</form>
+{% endblock %}
