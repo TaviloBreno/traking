@@ -1,10 +1,18 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../routes/web.php';
+require '../vendor/autoload.php';
+require '../routes/web.php';
 
-use App\Controllers\PedidoController;
 
-// Exemplo de roteamento básico
-$controller = new PedidoController();
-$controller->index();
+
+// Captura a URL da requisição e o método
+$uri = $_SERVER['REQUEST_URI'];
+$requestMethod = $_SERVER['REQUEST_METHOD'];
+
+// Resolve a rota
+$route = $router->resolve($uri, $requestMethod);
+
+// Executa a rota, se encontrada
+if (is_callable($route)) {
+    call_user_func($route);
+}

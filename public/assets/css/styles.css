@@ -1,0 +1,380 @@
+/* Estilos da página de consulta de pedidos */
+
+/* Definindo estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    padding-bottom: 80px;
+}
+
+/* Estilo para o título */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* Estilizando a tabela */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da tabela */
+table thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Linhas da tabela */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Links de ações */
+table td a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização para o menu de navegação */
+
+/* Estilo geral do nav */
+nav {
+    background-color: #2c3e50;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o menu */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* Estilo dos links do menu */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+nav ul li a:hover {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Estilo para a página atual ativa */
+nav ul li a.active {
+    background-color: #1abc9c;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Estilos para a página de erro 500 */
+.error-container {
+    text-align: center;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #e74c3c;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 80%;
+    max-width: 600px;
+}
+
+.error-container h1 {
+    font-size: 6em;
+    color: #e74c3c;
+    margin: 0;
+}
+
+.error-container h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.error-container p {
+    font-size: 1.2em;
+}
+
+.error-container a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.error-container a:hover {
+    text-decoration: underline;
+}
+
+/* app/Assets/css/styles.css */
+
+/* Estilos gerais do formulário */
+form {
+    max-width: 600px; /* Limita a largura do formulário */
+    margin: 20px auto; /* Centraliza o formulário */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Fundo claro */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-sizing: border-box; /* Garante que o padding e a largura sejam respeitados */
+}
+
+/* Estilo para os rótulos */
+label {
+    display: block; /* Faz os rótulos ocuparem a largura total */
+    margin-bottom: 5px; /* Espaçamento inferior */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"],
+input[type="date"] {
+    width: calc(100% - 20px); /* Ajusta a largura para levar em conta o padding do form */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e borda dentro da largura total */
+}
+
+/* Estilo para o campo de descricao que é um text area */
+#descricao {
+    width: calc(100% - 20px); /* Ajusta a largura para levar em conta o padding do form */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e borda dentro da largura total */
+}
+
+/* Estilo para o botão */
+button {
+    background-color: #28a745; /* Verde */
+    color: white; /* Texto branco */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor pointer */
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+/* Estilos para o footer */
+footer {
+    background-color: #333;          /* Cor de fundo escura */
+    color: #fff;                     /* Texto branco */
+    text-align: center;              /* Centraliza o texto */
+    padding: 20px;                   /* Espaçamento interno */
+    position: fixed;                 /* Fixa o footer na parte inferior da página */
+    left: 0;                         /* Alinha à esquerda */
+    right: 0;                        /* Alinha à direita */
+    bottom: 0;                       /* Fixa na parte inferior */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Estilização para o container de detalhes do pedido */
+.pedido-detalhes-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título */
+.pedido-titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo para os detalhes do pedido */
+.pedido-detalhes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pedido-detalhes li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Estilo para a lista de itens */
+.pedido-itens {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.pedido-itens li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o botão de voltar */
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn-voltar:hover {
+    background-color: #0056b3;
+}
+
+.pedido-editar-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-editar-container form label,
+.pedido-editar-container form input,
+.pedido-editar-container form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.pedido-editar-container form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.pedido-editar-container .btn-voltar {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+
+/* Estilo responsivo */
+@media (max-width: 600px) {
+    form {
+        padding: 15px; /* Menos espaçamento interno em telas menores */
+    }
+
+    button {
+        width: 100%; /* Botão ocupa toda a largura em telas menores */
+    }
+
+    footer p {
+        font-size: 14px;             /* Tamanho da fonte menor em telas pequenas */
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        width: 100%; /* O input ocupa toda a largura disponível */
+    }
+
+    .pedido-detalhes-container {
+        padding: 15px;
+    }
+
+    .pedido-titulo {
+        font-size: 20px;
+    }
+
+    .pedido-detalhes li {
+        font-size: 16px;
+    }
+
+    .btn-voltar {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) {
+    footer p {
+        font-size: 16px;             /* Tamanho da fonte padrão */
+    }
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
