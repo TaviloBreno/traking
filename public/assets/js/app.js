@@ -42,17 +42,3 @@ document.addEventListener('DOMContentLoaded', function () {
         footer.style.backgroundColor = footer.style.backgroundColor === 'lightgray' ? '#333' : 'lightgray';
     });
 });
-
-// app/Assets/js/criar_pedido.js
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
-
-    form.addEventListener('submit', function (event) {
-        const confirmacao = confirm("Deseja realmente criar este pedido?");
-        if (!confirmacao) {
-            // Impede o envio do formulário se o usuário cancelar
-            event.preventDefault();
-        }
-    });
-});

@@ -1,7 +1,5 @@
 <?php
 
-// app/Controllers/PedidoController.php
-
 namespace App\Controllers;
 
 use App\Models\Pedido;
@@ -13,7 +11,32 @@ class PedidoController
 
     public function __construct()
     {
+        // Valida se o usuário está logado
+        $this->checkSession();
+
+        // Inicializa o modelo de pedidos
         $this->pedidoModel = new Pedido();
+    }
+
+    /**
+     * Verifica se o usuário está logado.
+     */
+    private function checkSession()
+    {
+        // Inicia a sessão apenas se ela não tiver sido iniciada ainda
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Verifica se o usuário está logado
+        if (!isset($_SESSION['user_id'])) {
+            // Verifica se a página acessada não é a de login
+            if ($_SERVER['REQUEST_URI'] !== '/login') {
+                // Redireciona para a página de login se não estiver autenticado
+                header('Location: /login');
+                exit;
+            }
+        }
     }
 
     public function create()
@@ -56,7 +79,7 @@ class PedidoController
         $updated = $this->pedidoModel->update($id, $data); // Atualiza o pedido no banco
 
         if ($updated) {
-            header('Location: /pedidos');
+            header('Location: /');
             exit;
         } else {
             // Caso haja erro na atualização
@@ -89,7 +112,7 @@ class PedidoController
         $deleted = $this->pedidoModel->delete($id); // Deleta o pedido do banco
 
         if ($deleted) {
-            header('Location: /pedidos');
+            header('Location: /');
             exit;
         } else {
             // Caso haja erro na exclusão
